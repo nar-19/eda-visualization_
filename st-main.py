@@ -37,14 +37,14 @@ st.subheader(" ")
 
 # ) Read Data
 
-filepath1 = './dataset/WA_Fn-UseC_-Sales-Win-Loss.csv'
-filepath2 = './dataset/earthquake_data_tsunami.csv'
-filepath3 = './dataset/Global finance data.csv'
-filepath4 = './dataset/Sales Transaction v.4a.csv'
+filepath1 = 'dataset/WA_Fn-UseC_-Sales-Win-Loss.csv'
+filepath2 = 'dataset/earthquake_data_tsunami.csv'
+filepath3 = 'dataset/Global finance data.csv'
+# filepath4 = 'dataset/Sales Transaction v4a.csv'
 
 df = pd.read_csv(filepath1)
 
-button1, button2, button3, button4 = st.columns(4)
+button1, button2, button3 = st.columns(3)
 if button1.button("Sales win/loss dataset"):
     # button1.markdown("You clicked the plain button.")
     df = pd.read_csv(filepath1)
@@ -52,8 +52,8 @@ if button2.button("Tsunami dataset"):
     df = pd.read_csv(filepath2)
 if button3.button("Finance dataset"):
     df = pd.read_csv(filepath3)
-if button4.button("Transaction dataset"):
-    df = pd.read_csv(filepath4)
+# if button4.button("Transaction dataset"):
+#     df = pd.read_csv(filepath4)
 
 
 uploaded_file = st.file_uploader("Choose a file")
@@ -86,7 +86,7 @@ if df.columns[df.dtypes == 'object'].tolist() != []:
 
     plt_rows = ceil(len(df_string.columns)/plt_cols)                       # Set the no. of rows in subplot by dividing: 
                                                                         #  roundup(no. of variables / no. of columns)
-    figure(15, 10)
+    figure(12, 10)
     fig1, axes = plt.subplots(plt_rows,plt_cols)
     fig1.suptitle("Countplots of Categorical Variables \n (x-axis: Variable) \n (y-axis: Count of samples)", 
                 fontsize="x-large")
@@ -122,7 +122,7 @@ if df.columns[df.dtypes != 'object'].tolist() != []:
 
     plt_rows = ceil(len(df_numeric.columns)/plt_cols)             # Set the no. of rows in subplot by dividing: 
                                                                 #  roundup(no. of variables / no. of columns)
-    figure(15, 10) 
+    figure(12, 10) 
     fig2, axes = plt.subplots(plt_rows,plt_cols)
     fig2.suptitle("Distribution Plots of Numerical Variables \n (x-axis: Variable) \n (y-axis: Distribution proportion)", 
                 fontsize="x-large")
@@ -173,7 +173,7 @@ if os.path.exists('fig1.png'):
     os.remove('fig1.png')
 if os.path.exists('fig2.png'):
     os.remove('fig2.png')
- 
-    
+
+
 # Running Locally in VSCode
 # PS C:\Users\atirazmi\Desktop\project_\eda-visualization_> & C:/Users/atirazmi/AppData/Local/Programs/Python/Python312/python.exe -m streamlit run st-main.py
