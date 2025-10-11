@@ -45,12 +45,12 @@ filepath3 = 'dataset/Global finance data.csv'
 df = pd.read_csv(filepath1)
 
 button1, button2, button3 = st.columns(3)
-if button1.button("Sales win/loss dataset", width="stretch"):
+if button1.button("Sales win/loss dataset"):
     # button1.markdown("You clicked the plain button.")
     df = pd.read_csv(filepath1)
-if button2.button("Tsunami dataset", width="stretch"):
+if button2.button("Tsunami dataset"):
     df = pd.read_csv(filepath2)
-if button3.button("Finance dataset", width="stretch"):
+if button3.button("Finance dataset"):
     df = pd.read_csv(filepath3)
 # if button4.button("Transaction dataset"):
 #     df = pd.read_csv(filepath4)
