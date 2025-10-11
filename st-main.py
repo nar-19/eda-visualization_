@@ -173,4 +173,7 @@ if os.path.exists('fig1.png'):
     os.remove('fig1.png')
 if os.path.exists('fig2.png'):
     os.remove('fig2.png')
+ 
     
+# Running Locally in VSCode
+# PS C:\Users\atirazmi\Desktop\project_\eda-visualization_> & C:/Users/atirazmi/AppData/Local/Programs/Python/Python312/python.exe -m streamlit run st-main.py
