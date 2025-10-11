@@ -36,11 +36,13 @@ st.markdown("Kindly wait while file is running 🏃")
 st.subheader(" ")
 
 # ) Read Data
-# df = pd.read_csv('WA_Fn-UseC_-Sales-Win-Loss.csv')
+
 filepath1 = './dataset/WA_Fn-UseC_-Sales-Win-Loss.csv'
 filepath2 = './dataset/earthquake_data_tsunami.csv'
 filepath3 = './dataset/Global finance data.csv'
 filepath4 = './dataset/Sales Transaction v.4a.csv'
+
+df = pd.read_csv('filepath1')
 
 button1, button2, button3, button4 = st.columns(4)
 if button1.button("Sales win/loss dataset"):
