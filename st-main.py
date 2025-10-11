@@ -36,7 +36,23 @@ st.markdown("Kindly wait while file is running 🏃")
 st.subheader(" ")
 
 # ) Read Data
-df = pd.read_csv('WA_Fn-UseC_-Sales-Win-Loss.csv')
+# df = pd.read_csv('WA_Fn-UseC_-Sales-Win-Loss.csv')
+filepath1 = './dataset/WA_Fn-UseC_-Sales-Win-Loss.csv'
+filepath2 = './dataset/earthquake_data_tsunami.csv'
+filepath3 = './dataset/Global finance data.csv'
+filepath4 = './dataset/Sales Transaction v.4a.csv'
+
+button1, button2, button3, button4 = st.columns(4)
+if button1.button("Sales win/loss dataset"):
+    # button1.markdown("You clicked the plain button.")
+    df = pd.read_csv('filepath1')
+if button2.button("Tsunami dataset"):
+    df = pd.read_csv('filepath2')
+if button3.button("Finance dataset"):
+    df = pd.read_csv('filepath3')
+if button4.button("Transaction dataset"):
+    df = pd.read_csv('filepath4')
+
 
 uploaded_file = st.file_uploader("Choose a file")
 if uploaded_file is not None:
@@ -54,7 +70,7 @@ st.markdown(" ")
 def figure(a,b):
     sns.set(rc={'figure.figsize':(a,b)})
 
-figure(15,10)
+# figure(15,10)
 plt_cols = 3                                                           # Customized no. of columns in subplot
 
 # st.markdown('Cat variables:' + str(df.columns[df.dtypes == 'object'].tolist()))
@@ -68,6 +84,7 @@ if df.columns[df.dtypes == 'object'].tolist() != []:
 
     plt_rows = ceil(len(df_string.columns)/plt_cols)                       # Set the no. of rows in subplot by dividing: 
                                                                         #  roundup(no. of variables / no. of columns)
+    figure(15, plt_rows * 4)
     fig1, axes = plt.subplots(plt_rows,plt_cols)
     fig1.suptitle("Countplots of Categorical Variables \n (x-axis: Variable) \n (y-axis: Count of samples)", 
                 fontsize="x-large")
@@ -103,6 +120,7 @@ if df.columns[df.dtypes != 'object'].tolist() != []:
 
     plt_rows = ceil(len(df_numeric.columns)/plt_cols)             # Set the no. of rows in subplot by dividing: 
                                                                 #  roundup(no. of variables / no. of columns)
+    figure(15, plt_rows * 4) 
     fig2, axes = plt.subplots(plt_rows,plt_cols)
     fig2.suptitle("Distribution Plots of Numerical Variables \n (x-axis: Variable) \n (y-axis: Distribution proportion)", 
                 fontsize="x-large")
