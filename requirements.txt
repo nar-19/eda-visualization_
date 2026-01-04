@@ -5,4 +5,4 @@
 # seaborn==0.10.1
 seaborn==0.13.1
 # streamlit==1.5.1
-streamlit==1.30.0
+# streamlit==1.30.0
