@@ -10,3 +10,8 @@ The purpose of this application is to support pre-project data visualization, me
 - WA_Fn-UseC_-Sales-Win-Loss.csv
 
 4) Two types of charts are generated - count plots on the categorical variables and the distribution plots on the numerical variables.
+
+<img width="1460" height="1216" alt="image" src="https://github.com/user-attachments/assets/8d7fa3fd-5d46-4d49-a0f8-43e2941a6310" />
+
+<img width="1460" height="1216" alt="image" src="https://github.com/user-attachments/assets/9fc49da0-29c7-4072-9af8-adcbbc43e5fb" />
+
