@@ -135,7 +135,7 @@ if st.session_state.df is not None:
             plt.savefig('fig1',dpi=1000)
             status_analysis.write("Categorical variable plots generated.")
         else:
-            if os.path.exists('fig1.png'): os.remove('fig1.png')
+            # if os.path.exists('fig1.png'): os.remove('fig1.png')
             status_analysis.write("No categorical variables found for plotting.")
 
 
@@ -164,7 +164,7 @@ if st.session_state.df is not None:
             plt.savefig('fig2',dpi=1000)
             status_analysis.write("Numerical variable plots generated.")
         else:
-            if os.path.exists('fig2.png'): os.remove('fig2.png')
+            # if os.path.exists('fig2.png'): os.remove('fig2.png')
             status_analysis.write("No numerical variables found for plotting.")
 
         # Mark analysis as complete and collapse the status widget
