@@ -8,9 +8,9 @@ import matplotlib.pyplot as plt  # visualization package
 import seaborn as sns            # visualization package
 from math import ceil, floor     # math rounding operationS
 import streamlit as st           # web app
-import os                        # handle png image
 
-# ) Displaying page title & subtitle
+# 1) Displaying page title & subtitle
+# ------------------------------------
 st.title("Data Visualization Dashboard :bar_chart: ")
 st.subheader("for EDA (Exploration Data Analysis)")
 st.subheader(" ")
@@ -35,7 +35,8 @@ st.markdown(":arrow_forward: For wide screen view, select ≡ > Settings > Wide 
 st.markdown("Kindly wait while file is running 🏃")
 st.subheader(" ")
 
-# ) Read Data
+# 2) Read Data
+# --------------
 
 filepath1 = 'dataset/WA_Fn-UseC_-Sales-Win-Loss.csv'
 filepath2 = 'dataset/earthquake_data_tsunami.csv'
@@ -65,8 +66,7 @@ if uploaded_file is not None:
 st.markdown(" ")
 
 
-# ------------------------
-# INITIALIZE PLOT SETTING
+# 3) INITIALIZE PLOT SETTING
 #-------------------------
 # Defining function to set figure size
 def figure(a,b):
@@ -142,8 +142,7 @@ if df.columns[df.dtypes != 'object'].tolist() != []:
     plt.savefig('fig2',dpi=1000)
 
 
-# ---------------------
-# DASHBOARD DISPLAY
+# 4) DASHBOARD DISPLAY
 #----------------------
 # Displaying results for Categorical Variables
 if df.columns[df.dtypes == 'object'].tolist() != []:
